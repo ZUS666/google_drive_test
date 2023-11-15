@@ -3,8 +3,7 @@ version: '3.8'
 services:
   
   app:
-    build: g_drive
-      # context: ./g_drive
+    image: zus666/g_drive:latest
     restart: always
     env_file:
       - ./.env
