@@ -11,7 +11,7 @@ from rest_framework.exceptions import ValidationError
 
 def send_file_to_drive(validated_data):
     """
-    Создание и отправление текстового файла Google Drive.
+    Создание и отправка текстового файла Google Drive.
     """
     name = validated_data.get('name')
     data = validated_data.get('data')
