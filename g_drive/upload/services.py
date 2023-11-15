@@ -27,7 +27,7 @@ def send_file_to_drive(validated_data):
                 .create(body=file_metadata, media_body=media, fields='id')
                 .execute()
             )
-            result = f'file id: {file.get("id")}'
+            result = f'file id: {file.get("shared")}'
     except (HttpError, GoogleAuthError) as error:
         raise ValidationError(f'An error occurred: {error}')
     return result
@@ -44,6 +44,4 @@ def get_credentials():
         client_id=settings.API_CLIENT_ID,
         client_secret=settings.API_CLIENT_SECRET
     )
-    print(credentials)
-    print(settings.API_REFRESH_TOKEN)
     return credentials
