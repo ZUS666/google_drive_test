@@ -27,7 +27,7 @@ def send_file_to_drive(validated_data):
                 .create(body=file_metadata, media_body=media, fields='id')
                 .execute()
             )
-            result = f'file id: {file.get("shared")}'
+            result = f'file id: {file.get("id")}'
     except (HttpError, GoogleAuthError) as error:
         raise ValidationError(f'An error occurred: {error}')
     return result
